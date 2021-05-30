@@ -3,9 +3,10 @@ import Image from 'next/image'
 import styles from './layout.module.scss'
 import utilStyles from '../styles/utils.module.scss'
 import Link from 'next/link'
+import Footer from './footer'
 
 const name = 'Brennan Butler'
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'Brennan Butler | Engineer, Designer, Producer'
 
 export default function Layout({ children, home }) {
   return (
@@ -68,6 +69,8 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
+
+      <Footer></Footer>
     </div>
   )
 }
