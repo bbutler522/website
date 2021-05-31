@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.scss'
 
-export default function PBSNewsHour({ workData }) {
+export default function PBSNewsHour() {
   return (
     <Layout>
       <Head>
