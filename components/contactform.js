@@ -1,11 +1,12 @@
 import styles from './contactform.module.scss'
+import { useForm } from "react-hook-form";
 
 export default function ContactForm() {
 
   let resultMessageText = "";
+  const { register, handleSubmit, formState: { errors }} = useForm();
 
-  const submitContactForm = async event => {
-    event.preventDefault() 
+  const submitContactForm = async data => {
     console.log('Submitting form!')
     let result = {};
     let formElement = document.getElementById('contact-form');
@@ -16,11 +17,11 @@ export default function ContactForm() {
       'https://formsubmit.co/ajax/brennanmade@gmail.com',
       {
         body: JSON.stringify({
-          name: event.target.name.value,
-          email: event.target.email.value,
-          company: event.target.company.value,
-          referral: event.target.referral.value,
-          message: event.target.message.value
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          referral: data.referral,
+          message: data.message
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -45,20 +46,20 @@ export default function ContactForm() {
 
   return (
     <div>
-      <form id="contact-form" onSubmit={submitContactForm} className={styles.Contact_form}>
+      <form id="contact-form" onSubmit={handleSubmit(submitContactForm)} className={styles.Contact_form}>
         
         <div className={styles.Contact_inputColWrap}>
           <div className={styles.Contact_inputCol}>
             <div className={styles.Contact_inputWrap}>
               <label htmlFor="name">
                 <span className="visually-hidden">Name</span>
-                <input autoComplete="off" className={styles.Contact_input} name="name" placeholder="Name" tabIndex="0" />
+                <input autoComplete="off" className={styles.Contact_input} name="name" placeholder="Name" tabIndex="0" {...register("name")} />
               </label>
             </div>
             <div className={styles.Contact_inputWrap}>
               <label htmlFor="email">
                 <span className="visually-hidden">Email</span>
-                <input autoComplete="off" type="email" className={styles.Contact_input} name="email" placeholder="Email" tabIndex="0" required="" />
+                <input autoComplete="off" type="email" className={styles.Contact_input} name="email" placeholder="Email" tabIndex="0" required="" {...register("email", {required: "Required",})}/>
               </label>
             </div>
           </div>
@@ -66,13 +67,13 @@ export default function ContactForm() {
             <div className={styles.Contact_inputWrap}>
               <label htmlFor="company">
                 <span className="visually-hidden">Company Name</span>
-                <input autoComplete="off" className={styles.Contact_input} name="company" placeholder="Company Name" tabIndex="0" />
+                <input autoComplete="off" className={styles.Contact_input} name="company" placeholder="Company Name" tabIndex="0" {...register("company")} />
               </label>
             </div>
             <div className={styles.Contact_inputWrap}>
               <label htmlFor="referral">
                 <span className="visually-hidden">How did you hear about me?</span>
-                <input autoComplete="off" className={styles.Contact_input} name="referral" placeholder="How did you hear about me?" tabIndex="0" />
+                <input autoComplete="off" className={styles.Contact_input} name="referral" placeholder="How did you hear about me?" tabIndex="0" {...register("referral")} />
               </label>
             </div>
           </div>
@@ -80,15 +81,17 @@ export default function ContactForm() {
         <div className={`${styles.Contact_inputWrap} ${styles.Contact_inputWrapTextarea}`}>
           <label htmlFor="message">
             <span className="visually-hidden">What can I work on with you?</span>
-            <textarea autoComplete="off" className={`${styles.Contact_input} ${styles.Contact_input___textarea}`} name="message" placeholder="What can I work on with you?" tabIndex="0" required=""></textarea>
+            <textarea autoComplete="off" className={`${styles.Contact_input} ${styles.Contact_input___textarea}`} name="message" placeholder="What can I work on with you?" tabIndex="0" required="" {...register("message", {required: "Required",})}></textarea>
           </label>
         </div>
+        {errors.email && <span className={styles.errorMessage}>Email is required</span>}
+        {errors.message && <span className={styles.errorMessage}>Message is required</span>}
         <input type="submit" value="Contact Me" name="submit" className={styles.Contact_button} />
 
       </form>
 
       <div id="success-message" className={styles.resultMessage}>Your message has been sent!</div>
-      <div id="error-message" className={styles.resultMessage}>There was an issue. Please check your input and try submitting again. Or you can email me directly at <b>hello@brennanmade.com</b></div>
+      <div id="error-message" className={styles.resultMessage}>There was an issue. Please try submitting again, or you can email me at <b>hello@brennanmade.com</b></div>
     </div>
   )
 }

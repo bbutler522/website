@@ -5,6 +5,10 @@
 .Contact_inputColWrap {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 .Contact_inputCol {
@@ -12,6 +16,10 @@
 
   label {
     display: block;
+    width: 100%;
+  }
+
+  @media (max-width: 600px) {
     width: 100%;
   }
 }
@@ -74,6 +82,8 @@
 // Result Message
 .resultMessage {
   display: none;
+  color: #000;
+  margin-top: 10px;
 }
 
 .submitSuccess {
@@ -82,4 +92,9 @@
 
 .submitError {
   display: block;
+}
+
+.errorMessage {
+  display: block;
+  color: #000;
 }
