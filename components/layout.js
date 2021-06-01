@@ -18,14 +18,20 @@ export default function Layout({ children, home }) {
           name="description"
           content="Brennan Butler is a Software Engineer for PBS NewsHour and living in Brooklyn. He is an engieer, UX/UI designer, and musician/producer. Get in touch!"
         />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <link
+            rel="preload"
+            href="/fonts/jakarta/PlusJakartaSans-Regular.woff2"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/jakarta/PlusJakartaSans-Bold.woff2"
+            as="font"
+            crossOrigin=""
+          />
       </Head>
       <header className={styles.header}>
         {home ? (

@@ -1,17 +1,85 @@
-.contactForm {
-
-  &.success {
-    display: none;
-  }
-}
-
-#contactForm {
-
-  &.success {
-    display: none;
-  }
-}
-
 .Contact_form {
-  
+
+}
+
+.Contact_inputColWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Contact_inputCol {
+  width: calc(50% - 6px);
+
+  label {
+    display: block;
+    width: 100%;
+  }
+}
+
+.Contact_inputWrap {
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(0,0,0,.03);
+  color: #000;
+  margin-bottom: 12px;
+
+  label {
+    display: block;
+    width: 100%;
+  }
+
+  &:focus-within {
+    background: rgba(0,0,0,.09);
+  }
+}
+
+.Contact_input {
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  box-sizing: border-box;
+  padding: 15px 18px;
+  flex-shrink: 1;
+  z-index: 2;
+  width: 100%;
+  transition: border .15s;
+  min-width: 0;
+  font-family: "jakarta";
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.Contact_button {
+  font-size: 18px;
+  color: inherit;
+  font-family: "jakarta";
+  line-height: 1.2;
+  letter-spacing: 0;
+  padding: 8px 15px 9px 15px;
+  color: #000;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  cursor: pointer;
+  margin-top: 17px;
+  padding: 15px 20px;
+}
+
+// Result Message
+.resultMessage {
+  display: none;
+}
+
+.submitSuccess {
+  display: block;
+}
+
+.submitError {
+  display: block;
 }
