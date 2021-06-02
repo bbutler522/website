@@ -9,7 +9,7 @@ export default function ContactForm() {
   const submitContactForm = async data => {
     console.log('Submitting form!')
     let result = {};
-    let formElement = document.getElementById('contact-form');
+    let formElement = document.getElementById('contact');
     let successMessage = document.getElementById('success-message');
     let errorMessage = document.getElementById('error-message');
     
@@ -19,8 +19,6 @@ export default function ContactForm() {
         body: JSON.stringify({
           name: data.name,
           email: data.email,
-          company: data.company,
-          referral: data.referral,
           message: data.message
         }),
         headers: {
@@ -46,7 +44,7 @@ export default function ContactForm() {
 
   return (
     <div>
-      <form id="contact-form" onSubmit={handleSubmit(submitContactForm)} className={styles.Contact_form}>
+      <form id="contact" onSubmit={handleSubmit(submitContactForm)} className={styles.Contact_form}>
         
         <div className={styles.Contact_inputColWrap}>
           <div className={styles.Contact_inputCol}>
@@ -60,20 +58,6 @@ export default function ContactForm() {
               <label htmlFor="email">
                 <span className="visually-hidden">Email</span>
                 <input autoComplete="off" type="email" className={styles.Contact_input} name="email" placeholder="Email" tabIndex="0" required="" {...register("email", {required: "Required",})}/>
-              </label>
-            </div>
-          </div>
-          <div className={styles.Contact_inputCol}>
-            <div className={styles.Contact_inputWrap}>
-              <label htmlFor="company">
-                <span className="visually-hidden">Company Name</span>
-                <input autoComplete="off" className={styles.Contact_input} name="company" placeholder="Company Name" tabIndex="0" {...register("company")} />
-              </label>
-            </div>
-            <div className={styles.Contact_inputWrap}>
-              <label htmlFor="referral">
-                <span className="visually-hidden">How did you hear about me?</span>
-                <input autoComplete="off" className={styles.Contact_input} name="referral" placeholder="How did you hear about me?" tabIndex="0" {...register("referral")} />
               </label>
             </div>
           </div>

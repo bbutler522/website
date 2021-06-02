@@ -1,0 +1,204 @@
+/////
+// Hero
+///
+
+.hero_container {
+  height: 100vh;
+  padding-bottom: 6rem;
+} 
+
+.hero_main {
+  display: flex;
+  width: 100%;
+  padding-top: 2.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero_textWrapper {
+  padding-right: 10%;
+}
+
+.hero_heading {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #00A2EA  ;
+  font-weight: 700;
+}
+
+.hero_textBlock {
+  padding-top: 1.5rem;
+  padding-right: 4rem;
+  padding-bottom: 2rem;
+  font-size: 1.375rem;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+.buttonLarge_wrapper {
+  position: relative;
+  display: flex;
+  width: 200px;
+  height: 56px;
+  margin-top: 0px;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.buttonLarge_fill {
+  position: absolute;
+  left: 0px;
+  top: 16px;
+  right: 0px;
+  bottom: 0px;
+  width: 180px;
+  height: 56px;
+  background-color: #002e4d;
+}
+
+.buttonLarge_top {
+  position: absolute;
+  left: 1rem;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  width: 180px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  background-color: #00A2EA;
+  transition: all 200ms ease;
+  color: #153956;
+  font-size: 21px;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    left: 8px;
+    top: 8px;
+    text-decoration: none;
+  }
+}
+
+.hero_imageContainer {
+  position: relative;
+}
+
+.hero_photo {
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  border-style: solid;
+  border-width: 24px;
+  border-color: #002e4d;
+  border-radius: 50%;
+  // background-image: url(../images/nadia-photo.svg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.hero_imageContainer {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.hero_imageWrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+  order: 1;
+  border-style: solid;
+  border-width: 24px;
+  border-color: #002e4d;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/////
+// Work Preview
+///
+
+.work {
+
+}
+
+.work_header {
+  color: #00A2EA;
+}
+
+.work_previewContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.work_preview {
+  width: 30%;
+}
+
+.work_figure {
+  padding-bottom: 56.25%;
+  background-color: #1f1f1f;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.work_link {
+  display: block;
+  width: 100%;
+  position: relative;
+  text-decoration: none;
+}
+
+.work_hover {
+  overflow: hidden;
+  visibility: hidden;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  img {
+    transition: transform 7s cubic-bezier(0.25, 0.5, 0.49, 0.94), -webkit-transform 7s cubic-bezier(0.25, 0.5, 0.49, 0.94);
+    transform: scale(1);
+  }
+}
+
+.work_link:hover .work_hover,
+.work_link:active .work_hover {
+  visibility: visible;
+
+  img {
+    transform: scale(1.15);
+  }
+}
+
+.work_video {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(-50%) scale(1.02);
+}
+
+.work_title {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 16px;
+}

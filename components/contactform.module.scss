@@ -12,26 +12,24 @@
 }
 
 .Contact_inputCol {
-  width: calc(50% - 6px);
+  width: 100%;
 
   label {
     display: block;
-    width: 100%;
-  }
-
-  @media (max-width: 600px) {
     width: 100%;
   }
 }
 
 .Contact_inputWrap {
   display: flex;
-  border-radius: 5px;
   overflow: hidden;
   position: relative;
-  background: rgba(0,0,0,.03);
+  background: #eee;
   color: #000;
   margin-bottom: 12px;
+  border-width: 0px 0px 3px;
+  border-color: #000 #000 #eee;
+  border-style: solid;
 
   label {
     display: block;
@@ -39,7 +37,7 @@
   }
 
   &:focus-within {
-    background: rgba(0,0,0,.09);
+    border-bottom-color: #00A2EA;
   }
 }
 
@@ -48,13 +46,13 @@
   line-height: 1.2;
   letter-spacing: 0;
   box-sizing: border-box;
-  padding: 15px 18px;
+  padding: 15px 18px 12px 18px;
   flex-shrink: 1;
   z-index: 2;
   width: 100%;
   transition: border .15s;
   min-width: 0;
-  font-family: "jakarta";
+  font-family: "jakarta"; 
 
   &:focus {
     outline: 0;
@@ -70,7 +68,6 @@
   padding: 8px 15px 9px 15px;
   color: #000;
   display: inline-block;
-  border-radius: 5px;
   border: 1px solid;
   -webkit-box-shadow: none;
   box-shadow: none;

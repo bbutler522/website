@@ -10,7 +10,7 @@ export const siteTitle = 'Brennan Butler | Engineer, Designer, Producer'
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div className={styles.layout}>
       <Head>
         <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -34,48 +34,21 @@ export default function Layout({ children, home }) {
           />
       </Head>
       <header className={styles.header}>
-        {home ? (
-          <>
-            {/* <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            /> */}
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
+        
+        <div className={styles.homeLink}>
           <Link href="/">
-            <a>← Back to home</a>
+            <Image
+              priority
+              src="/images/logo-white-500.png"
+              height={36}
+              width={152}
+              alt={"Brennan Made Logo"}
+            />
           </Link>
         </div>
-      )}
+        
+      </header>
+      <main>{children}</main>
 
       <Footer></Footer>
     </div>
