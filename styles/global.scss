@@ -1,3 +1,5 @@
+@import "styles/mixins";
+
 @font-face {
   font-family: "Jakarta";
   font-weight: 400;
@@ -91,7 +93,15 @@ main {
   width: 100%;
   max-width: 1600px;
   min-height: 100vh;
-  padding: 0px 150px;
+  padding: 0px;
+
+  @include mq($xl) {
+    padding: 0px 150px;
+  }
+
+  @include mq($lg) {
+    padding: 0px 20px;
+  }
 }
 
 .container {
@@ -103,4 +113,95 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+}
+
+
+
+/////
+// Buttons
+///
+
+
+.buttonLarge_wrapper {
+  position: relative;
+  display: flex;
+  width: 200px;
+  height: 56px;
+  margin-top: 0px;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.buttonLarge_fill {
+  position: absolute;
+  left: 0px;
+  top: 16px;
+  right: 0px;
+  bottom: 0px;
+  width: 180px;
+  height: 56px;
+  background-color: #002e4d;
+}
+
+.buttonLarge_top {
+  position: absolute;
+  left: 1rem;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  width: 180px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  background-color: #00A2EA;
+  transition: all 200ms ease;
+  color: #153956;
+  font-size: 21px;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    left: 8px;
+    top: 8px;
+    text-decoration: none;
+  }
+}
+
+.buttonSmall_wrapper {
+  position: relative;
+  width: 152px;
+  height: 48px;
+  margin-top: 4rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.buttonSmall_border {
+  position: relative;
+  width: 152px;
+  height: 48px;
+  border: 2px solid #00A2EA;
+}
+
+.buttonSmall_top {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: #0a192f;
+  transition: all 200ms ease;
+  color: #00A2EA;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    left: 8px;
+    bottom: 8px;
+    text-decoration: none;
+  }
 }
