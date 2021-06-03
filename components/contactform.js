@@ -50,22 +50,22 @@ export default function ContactForm() {
           <div className={styles.Contact_inputCol}>
             <div className={styles.Contact_inputWrap}>
               <label htmlFor="name">
-                <span className="visually-hidden">Name</span>
-                <input autoComplete="off" className={styles.Contact_input} name="name" placeholder="Name" tabIndex="0" {...register("name")} />
+                <span className={styles.labelText}>Name</span>
+                <input autoComplete="off" className={styles.Contact_input} name="name" tabIndex="0" {...register("name")} />
               </label>
             </div>
             <div className={styles.Contact_inputWrap}>
               <label htmlFor="email">
-                <span className="visually-hidden">Email</span>
-                <input autoComplete="off" type="email" className={styles.Contact_input} name="email" placeholder="Email" tabIndex="0" required="" {...register("email", {required: "Required",})}/>
+                <span className={styles.labelText}>Email</span>
+                <input autoComplete="off" type="email" className={styles.Contact_input} name="email" tabIndex="0" required="" {...register("email", {required: "Required",})}/>
               </label>
             </div>
           </div>
         </div>
         <div className={`${styles.Contact_inputWrap} ${styles.Contact_inputWrapTextarea}`}>
           <label htmlFor="message">
-            <span className="visually-hidden">What can I work on with you?</span>
-            <textarea autoComplete="off" className={`${styles.Contact_input} ${styles.Contact_input___textarea}`} name="message" placeholder="What can I work on with you?" tabIndex="0" required="" {...register("message", {required: "Required",})}></textarea>
+            <span className={styles.labelText}>Message</span>
+            <textarea autoComplete="off" className={`${styles.Contact_input} ${styles.Contact_input___textarea}`} rows="5" name="message" tabIndex="0" required="" {...register("message", {required: "Required",})}></textarea>
           </label>
         </div>
         {errors.email && <span className={styles.errorMessage}>Email is required</span>}
