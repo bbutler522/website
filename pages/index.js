@@ -34,9 +34,9 @@ export default function Home({ allPostsData }) {
             <div className={styles.hero_textBlock}>
               By day I'm a software engineer with PBS NewsHour. By night I make things. Creative expression is my passion, and I'm always open to learning about new opportunities.
             </div>
-            <div className={styles.buttonLarge_wrapper}>
-              <div className={styles.buttonLarge_fill}></div>
-              <a href="#contact" className={styles.buttonLarge_top}>Let's talk</a>
+            <div className="buttonLarge_wrapper">
+              <div className="buttonLarge_fill"></div>
+              <a href="#contact" className="buttonLarge_top">Let's talk</a>
             </div>
           </div>
           <div className={styles.hero_imageContainer}>
@@ -47,7 +47,6 @@ export default function Home({ allPostsData }) {
                   height={500}
                   width={500}
                   layout="responsive"
-                  className="test"
                   alt={"Brennan Butler Photo"}
                 />
             </div>
@@ -57,61 +56,78 @@ export default function Home({ allPostsData }) {
 
       {/* Work Preview */}
       <section className={styles.work}>
-        <div class="container">
+        <div className="container">
           <h2 className={styles.work_header}>A preview of my work</h2>
           <div className={styles.work_previewContainer}>
             <div className={styles.work_preview}>
               <a href="https://pbs.org/newshour" className={styles.work_link}>
-                <figure className={styles.work_hover}>
-                  <img src="https://upstatement.com/wp-content/themes/upstatement/content/img/work/newshour-hover.jpg" alt="Tease hover image for PBS NewsHour" />
-                </figure>
-
+                
                 <div className={styles.work_figure}>
-                  <video poster="https://upstatement.com/wp-content/themes/upstatement/content/img/work/newshour.jpg" className={styles.work_video} preload="" muted="muted" loop="loop" playsinline="" autoplay="autoplay">
+                  <figure className={styles.work_hover}>
+                    <Image
+                      priority
+                      src="/images/work/newshour-hover.jpg"
+                      layout="fill"
+                      alt={"Tease hover image for PBS NewsHour"}
+                    />
+                  </figure>
+                  {/* <video poster="https://upstatement.com/wp-content/themes/upstatement/content/img/work/newshour.jpg" className={styles.work_video} preload="" muted="muted" loop="loop" playsinline="" autoplay="autoplay">
                     <source src="https://upstatement.com/wp-content/themes/upstatement/content/img/work/newshour.mp4" type="video/mp4" />
-                  </video>
+                  </video> */}
                 </div>
                 
                 <h2 className={styles.work_title}>
-                  <strong>PBS NewsHour:</strong> Trusted news for more than 40 years
+                  <strong>PBS NewsHour:</strong>  <br/> Solid, reliable reporting for millions
                 </h2>
               </a>
             </div>
             <div className={styles.work_preview}>
               <a href="https://orangeastronaut.com" className={styles.work_link}>
-                <figure className={styles.work_hover}>
-                  <img src="https://upstatement.com/wp-content/themes/upstatement/content/img/work/newshour-hover.jpg" alt="Tease hover image for PBS NewsHour" />
-                </figure>
 
                 <div className={styles.work_figure}>
-                  <video poster="https://upstatement.com/wp-content/themes/upstatement/content/img/work/newshour.jpg" className={styles.work_video} preload="" muted="muted" loop="loop" playsinline="" autoplay="autoplay">
-                    <source src="https://upstatement.com/wp-content/themes/upstatement/content/img/work/newshour.mp4" type="video/mp4" />
-                  </video>
+                  <figure className={styles.work_hover}>
+                    <Image
+                      priority
+                      src="/images/work/oa-hover.jpg"
+                      layout="fill"
+                      alt={"Tease hover image for PBS NewsHour"}
+                    />
+                  </figure>
                 </div>
                 
                 <h2 className={styles.work_title}>
-                  <strong>PBS NewsHour:</strong> Trusted news for more than 40 years
+                  <strong>Orange Astronaut</strong> <br/> Helping brands communicate what they do
                 </h2>
               </a>
             </div>
             <div className={styles.work_preview}>
               <a href="https://artscanvas.org" className={styles.work_link}>
-                <figure className={styles.work_hover}>
-                  <img src="https://upstatement.com/wp-content/themes/upstatement/content/img/work/newshour-hover.jpg" alt="Tease hover image for PBS NewsHour" />
-                </figure>
 
                 <div className={styles.work_figure}>
-                  <video poster="https://upstatement.com/wp-content/themes/upstatement/content/img/work/newshour.jpg" className={styles.work_video} preload="" muted="muted" loop="loop" playsinline="" autoplay="autoplay">
-                    <source src="https://upstatement.com/wp-content/themes/upstatement/content/img/work/newshour.mp4" type="video/mp4" />
-                  </video>
+                  <figure className={styles.work_hover}>
+                    <Image
+                      priority
+                      src="/images/work/canvas-hover.jpg"
+                      layout="fill"
+                      alt={"Tease hover image for PBS NewsHour"}
+                    />
+                  </figure>
                 </div>
                 
                 <h2 className={styles.work_title}>
-                  <strong>PBS NewsHour:</strong> Trusted news for more than 40 years
+                  <strong>CANVAS</strong> <br/> Arts and culture from across the country
                 </h2>
               </a>
             </div>
           </div>
+
+          <p className={styles.workMessage}><strong>Contact me for more samples</strong><br />More here soon</p>
+          {/* <div className="buttonSmall_wrapper">
+            <div className="buttonSmall_border"></div>
+            <Link href={`/work`}>
+              <a className="buttonSmall_border buttonSmall_top">More Work</a>
+            </Link>
+          </div> */}
         </div>
       </section>
 
