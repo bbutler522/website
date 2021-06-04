@@ -38,6 +38,23 @@
   cursor: pointer;
 }
 
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  svg {
+    height: 40px;
+    fill: #00A2EA;
+    margin-right: 10px;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+}
+
 .navLinks {
   list-style: none;
   display: flex;

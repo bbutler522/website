@@ -24,9 +24,9 @@ export default function Footer() {
         <div className={styles.footerText_container}>
           <h2>Want to bring your ideas to life?</h2>
           <p>Have an exciting project that could use my help? Need a consultation? Get in touch and let's chat!</p>
-          <p>Use the form or <a href="mailto:brennanmade@gmail.com">email me</a> at <span className={styles.copyButton} onClick={() => copyToClipboard()}>brennanmade@gmail.com</span></p>
+          <p>Use the form or <a href="mailto:hello@brennanbutler.com">email me</a> at <span className={styles.copyButton} onClick={() => copyToClipboard()}>hello@brennanbutler.com</span></p>
           <div id="copy-notice" className={styles.copyNotice}>Email copied to clipboard</div>
-          <input id="email-copy" className={styles.copyText} defaultValue="brennanmade@gmail.com"></input>
+          <input id="email-copy" className={styles.copyText} defaultValue="hello@brennanbutler.com"></input>
         </div>
         
 
@@ -39,7 +39,7 @@ export default function Footer() {
       <div className={`${styles.footerLowerWrapper}`}>
         <div className={`${styles.footerLowerContainer} container`}>
           <div className={styles.footerAbout}>
-            My name is Brennan Butler and I'm a creatively driven, and technically skilled. I'm here to help bring your ideas for life and to make an impact. Any project size is welcome!
+            My name is Brennan Butler and I'm creatively driven, and technically skilled. I'm here to help bring your ideas to life and to make an impact. Any project size is welcome!
           </div>
 
           <div className={styles.footerLinks}>

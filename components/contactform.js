@@ -14,7 +14,7 @@ export default function ContactForm() {
     let errorMessage = document.getElementById('error-message');
     
     const res = await fetch(
-      'https://formsubmit.co/ajax/brennanmade@gmail.com',
+      'https://formsubmit.co/ajax/hello@brennanbutler.com',
       {
         body: JSON.stringify({
           name: data.name,
@@ -75,7 +75,7 @@ export default function ContactForm() {
       </form>
 
       <div id="success-message" className={styles.resultMessage}>Your message has been sent!</div>
-      <div id="error-message" className={styles.resultMessage}>There was an issue. Please try submitting again, or you can email me at <b>hello@brennanmade.com</b></div>
+      <div id="error-message" className={styles.resultMessage}>There was an issue. Please try submitting again, or you can email me at <b>hello@brennanbutler.com</b></div>
     </div>
   )
 }
