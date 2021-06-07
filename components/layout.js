@@ -62,10 +62,12 @@ export default function Layout({ children, home }) {
           </div>
 
           <ul className={styles.navLinks}>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
 
-          {/* <div className={styles.navMenuContainer}>
+          <div className={styles.navMenuContainer}>
             <div className={styles.navIcon_Container} onClick={() => openMenu()}>
               <div id="nav-icon" className={styles.navIcon}>
                 <span></span>
@@ -74,12 +76,17 @@ export default function Layout({ children, home }) {
               </div>
             </div>
             <aside id="nav-menu" className={styles.navMenu}>
-              <Link href={`/work`}>
+              {/* <Link href={`/work`}>
                 Work
-              </Link>
+              </Link> */}
+              <ul className={styles.navMenu_links}>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
             </aside>
             <div id="nav-background" className={styles.navBackground}></div>
-          </div> */}
+          </div>
 
         </div>
       </header>
