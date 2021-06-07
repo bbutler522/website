@@ -29,7 +29,8 @@ export default function Layout({ children, home }) {
     <div id="layout" className={styles.layout}>
       <Head>
         <title>{siteTitle}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
         <meta
           name="description"
           content="Brennan Butler is a Software Engineer for PBS NewsHour and living in Brooklyn. He is an engieer, UX/UI designer, and musician/producer. Get in touch!"
@@ -62,9 +63,21 @@ export default function Layout({ children, home }) {
           </div>
 
           <ul className={styles.navLinks}>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>
+              <Link href="/#work">
+                <a>Work</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/#services">
+                <a>Services</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/#contact">
+                <a>Contact</a>
+              </Link>
+            </li>
           </ul>
 
           <div className={styles.navMenuContainer}>
@@ -80,9 +93,21 @@ export default function Layout({ children, home }) {
                 Work
               </Link> */}
               <ul className={styles.navMenu_links}>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li>
+                  <Link href="/#work">
+                    <a>Work</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#services">
+                    <a>Services</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#contact">
+                    <a>Contact</a>
+                  </Link>
+                </li>
               </ul>
             </aside>
             <div id="nav-background" className={styles.navBackground}></div>
