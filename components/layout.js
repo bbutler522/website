@@ -8,7 +8,7 @@ import Footer from './footer'
 const name = 'Brennan Butler'
 export const siteTitle = 'Brennan Butler | Engineer, Designer, Producer'
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, fullWidth, customFooter }) {
   function openMenu() {
     const navIcon = document.getElementById("nav-icon");
     const navMenu = document.getElementById("nav-menu");
@@ -62,62 +62,76 @@ export default function Layout({ children, home }) {
             </Link>
           </div>
 
-          <ul className={styles.navLinks}>
-            <li>
-              <Link href="/#work">
-                <a>Work</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/#services">
-                <a>Services</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/#contact">
-                <a>Contact</a>
-              </Link>
-            </li>
-          </ul>
+          <div className={styles.rightNav}>
 
-          <div className={styles.navMenuContainer}>
-            <div className={styles.navIcon_Container} onClick={() => openMenu()}>
-              <div id="nav-icon" className={styles.navIcon}>
-                <span></span>
-                <span></span>
-                <span></span>
+            <ul className={styles.navLinks}>
+              <li>
+                <Link href="/#work">
+                  <a>Work</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services">
+                  <a>Services</a>
+                </Link>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+
+            <div className={styles.navMenuContainer}>
+              <div className={styles.navIcon_Container} onClick={() => openMenu()}>
+                <div id="nav-icon" className={styles.navIcon}>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
+              <aside id="nav-menu" className={styles.navMenu}>
+                {/* <Link href={`/work`}>
+                  Work
+                </Link> */}
+                <ul className={styles.navMenulinks}>
+                  <li>
+                    <Link href="/#work">
+                      <a>Work</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/#services">
+                      <a>Services</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <a href="#contact">Contact</a>
+                  </li>
+                </ul>
+
+                <ul className={styles.navMenuLinks_secondary}>
+                  <li>
+                    <Link href="/nonprofit">
+                      <a>Nonprofit</a>
+                    </Link>
+                  </li>
+                </ul>
+              </aside>
+              <div id="nav-background" className={styles.navBackground}></div>
             </div>
-            <aside id="nav-menu" className={styles.navMenu}>
-              {/* <Link href={`/work`}>
-                Work
-              </Link> */}
-              <ul className={styles.navMenu_links}>
-                <li>
-                  <Link href="/#work">
-                    <a>Work</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#services">
-                    <a>Services</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#contact">
-                    <a>Contact</a>
-                  </Link>
-                </li>
-              </ul>
-            </aside>
-            <div id="nav-background" className={styles.navBackground}></div>
           </div>
 
         </div>
       </header>
-      <main id="main">{children}</main>
+      
+      {fullWidth ? (
+        <main id="main" className="full-width">{children}</main>
+      ) : (
+        <main id="main">{children}</main>
+      )}
 
-      <Footer></Footer>
+      {customFooter ? (null) : (
+        <Footer></Footer>
+      )}
     </div>
   )
 }

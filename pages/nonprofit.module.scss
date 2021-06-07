@@ -1,0 +1,102 @@
+@import "styles/mixins";
+
+.halfPhoto {
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  position: relative;
+
+  @include mq(0, $sm) {
+    grid-template-areas:  "text"
+                          "photo";
+  }
+
+  @include mq($sm) {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+.halfPhoto:first-child .halfPhoto_text {
+  text-align: left;
+
+  @include mq($md) {
+    text-align: right;
+    justify-self: end;
+  }
+}
+
+.halfPhoto_text {
+  max-width: 800px;
+  padding: 0 20px;
+
+  span {
+    color: #00A2EA;
+  }
+
+  @include mq($xl) {
+    font-size: 1.6rem;
+    line-height: 1.6em;
+  }
+
+  @include mq(0, $sm) {
+    grid-area: text;
+    margin-top: 30px;
+  }
+}
+
+.headline {
+  font-size: 1.6rem;
+  line-height: 1.3em;
+  
+  span {
+    display: block;
+    color: #00A2EA;
+  }
+
+  @include mq($md) {
+    font-size: 2rem;
+    line-height: 1.3em;
+  }
+
+  @include mq($xl) {
+    font-size: 2.4rem;
+  }
+}
+
+.subhead {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  font-weight: bold;
+
+  @include mq($md) {
+    font-size: 1.5rem;
+    margin-top: 40px;
+  }
+}
+
+.halfPhoto_image {
+  width: 100%;
+  height: 100%;
+
+
+  @include mq(0, $sm) {
+    grid-area: photo;
+  }
+}
+
+.smallContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-size: 1.2rem;
+  line-height: 1.6em;
+
+  h2 {
+    color: #00A2EA;
+  }
+
+  @include mq($lg) {
+    font-size: 1.4rem;
+    line-height: 1.6em;
+  }
+}

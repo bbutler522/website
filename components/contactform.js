@@ -1,7 +1,7 @@
 import styles from './contactform.module.scss'
 import { useForm } from "react-hook-form";
 
-export default function ContactForm() {
+export default function ContactForm(props) {
 
   let resultMessageText = "";
   const { register, handleSubmit, formState: { errors }} = useForm();
@@ -12,6 +12,11 @@ export default function ContactForm() {
     let formElement = document.getElementById('contact');
     let successMessage = document.getElementById('success-message');
     let errorMessage = document.getElementById('error-message');
+    let source = 'Main footer';
+    if (props.source) {
+      source = props.source;
+    }
+    console.log(source)
     
     const res = await fetch(
       'https://formsubmit.co/ajax/hello@brennanbutler.com',
@@ -19,7 +24,8 @@ export default function ContactForm() {
         body: JSON.stringify({
           name: data.name,
           email: data.email,
-          message: data.message
+          message: data.message,
+          source: source
         }),
         headers: {
           'Content-Type': 'application/json',
