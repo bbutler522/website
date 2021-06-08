@@ -19,24 +19,10 @@ export default function Footer(props) {
     }, 2000);
   }
 
-  const hasCustomProps = Object.keys(props).length !== 0 && props.constructor === Object
-  console.log(hasCustomProps);
-
   return (
     <div className={styles.footer}>
       <div className={`${styles.footerContainer} container`}>
         <div className={styles.footerText_container}>
-          {/* {hasCustomProps ? (
-          <>
-            <h2>Want to bring your ideas to life?</h2>
-            <p>Have an exciting project that could use my help? Need a consultation? Get in touch and let's chat!</p>
-          </>
-          ) : (
-          <>
-            <h2>Want to bring your ideas to life?</h2>
-            <p>Have an exciting project that could use my help? Need a consultation? Get in touch and let's chat!</p>
-          </>
-          )} */}
           <h2>{props.headline ? (props.headline) : (`Want to bring your ideas to life?`)}</h2>
           <p>{props.subhead ? (props.subhead) : (`Have an exciting project that could use my help? Need a consultation? Get in touch and let's chat!`)}</p>
 
@@ -69,7 +55,7 @@ export default function Footer(props) {
           <div className={styles.footerSocial}>
             <div className={styles.footerSocialLinkContainer}>
               <a className={styles.footerSocialLink} href="https://www.linkedin.com/in/butlerbrennan/">
-                <span class="visually-hidden">Linkedin</span>
+                <span className="visually-hidden">Linkedin</span>
                 <Image
                   src="/images/social/linkedin.svg"
                   height={50}
@@ -78,7 +64,7 @@ export default function Footer(props) {
                 />
               </a>
               <a className={styles.footerSocialLink} href="https://github.com/bbutler522/">
-                <span class="visually-hidden">Github</span>
+                <span className="visually-hidden">Github</span>
                 <Image
                   src="/images/social/github.svg"
                   height={50}
@@ -87,7 +73,7 @@ export default function Footer(props) {
                 />
               </a>
               <a className={styles.footerSocialLink} href="https://www.instagram.com/brennanrome/">
-                <span class="visually-hidden">Instagram</span>
+                <span className="visually-hidden">Instagram</span>
                 <Image
                   src="/images/social/instagram.svg"
                   height={50}
@@ -96,7 +82,7 @@ export default function Footer(props) {
                 />
               </a>
               <a className={styles.footerSocialLink} href="https://twitter.com/BrennanRome">
-                <span class="visually-hidden">Twitter</span>
+                <span className="visually-hidden">Twitter</span>
                 <Image
                   src="/images/social/twitter.svg"
                   height={50}
@@ -105,7 +91,7 @@ export default function Footer(props) {
                 />
               </a>
               <a className={styles.footerSocialLink} href="https://soundcloud.com/brennanbutler/">
-                <span class="visually-hidden">SoundCloud</span>
+                <span className="visually-hidden">SoundCloud</span>
                 <Image
                   src="/images/social/soundcloud.svg"
                   height={50}
