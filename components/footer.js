@@ -1,6 +1,7 @@
 import styles from './footer.module.scss'
 import ContactForm from './contactform'
-import { useRef } from 'react';
+import Image from 'next/image'
+
 
 
 
@@ -63,6 +64,56 @@ export default function Footer(props) {
 
           <div className={styles.footer_buildNote}>
             This site is built with NextJS, React, and SCSS. Designed in Figma. Source code available on <a href="https://github.com/bbutler522/website" target="_blank">Github</a>.
+          </div>
+
+          <div className={styles.footerSocial}>
+            <div className={styles.footerSocialLinkContainer}>
+              <a className={styles.footerSocialLink} href="https://www.linkedin.com/in/butlerbrennan/">
+                <span class="visually-hidden">Linkedin</span>
+                <Image
+                  src="/images/social/linkedin.svg"
+                  height={50}
+                  width={50}
+                  layout="responsive"
+                />
+              </a>
+              <a className={styles.footerSocialLink} href="https://github.com/bbutler522/">
+                <span class="visually-hidden">Github</span>
+                <Image
+                  src="/images/social/github.svg"
+                  height={50}
+                  width={50}
+                  layout="responsive"
+                />
+              </a>
+              <a className={styles.footerSocialLink} href="https://www.instagram.com/brennanrome/">
+                <span class="visually-hidden">Instagram</span>
+                <Image
+                  src="/images/social/instagram.svg"
+                  height={50}
+                  width={50}
+                  layout="responsive"
+                />
+              </a>
+              <a className={styles.footerSocialLink} href="https://twitter.com/BrennanRome">
+                <span class="visually-hidden">Twitter</span>
+                <Image
+                  src="/images/social/twitter.svg"
+                  height={50}
+                  width={50}
+                  layout="responsive"
+                />
+              </a>
+              <a className={styles.footerSocialLink} href="https://soundcloud.com/brennanbutler/">
+                <span class="visually-hidden">SoundCloud</span>
+                <Image
+                  src="/images/social/soundcloud.svg"
+                  height={50}
+                  width={50}
+                  layout="responsive"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>

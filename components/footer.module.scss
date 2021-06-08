@@ -86,3 +86,17 @@
     color: #444;
   }
 }
+
+.footerSocialLinkContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.footerSocialLink {
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+  padding: 6px;
+}
