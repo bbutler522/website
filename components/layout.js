@@ -10,19 +10,18 @@ export const siteTitle = 'Brennan Butler | Engineer, Designer, Producer'
 
 export default function Layout({ children, fullWidth, customFooter }) {
   function openMenu() {
+    console.log('clicked')
+    var elements = document.getElementsByClassName("nav-link");
+
     const navIcon = document.getElementById("nav-icon");
     const navMenu = document.getElementById("nav-menu");
-    const navBackground = document.getElementById("nav-background");
-
-    navBackground.removeEventListener("click", openMenu)
 
     navIcon.classList.toggle(styles.open)
     navMenu.classList.toggle(styles.open)
-    navBackground.classList.toggle(styles.open)
 
-    if (navMenu.classList.contains(styles.open)) {
-      navBackground.addEventListener("click", openMenu)
-    }
+    Array.from(elements).forEach(function(element) {
+      element.addEventListener('click', openMenu);
+    });
   }
 
   return (
@@ -80,44 +79,42 @@ export default function Layout({ children, fullWidth, customFooter }) {
               </li>
             </ul>
 
-            <div className={styles.navMenuContainer}>
-              <div className={styles.navIcon_Container} onClick={() => openMenu()}>
-                <div id="nav-icon" className={styles.navIcon}>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
+            <div className={styles.navIcon_Container} onClick={() => openMenu()}>
+              <div id="nav-icon" className={styles.navIcon}>
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
-              <aside id="nav-menu" className={styles.navMenu}>
-                {/* <Link href={`/work`}>
-                  Work
-                </Link> */}
+            </div>
+
+            <div id="nav-menu" className={styles.navMenu}>
+
+              <nav className={styles.navMenuList}>
                 <ul className={styles.navMenulinks}>
                   <li>
                     <Link href="/#work">
-                      <a>Work</a>
+                      <a className="nav-link">Work</a>
                     </Link>
                   </li>
                   <li>
                     <Link href="/#services">
-                      <a>Services</a>
+                      <a className="nav-link">Services</a>
                     </Link>
                   </li>
                   <li>
-                    <a href="#contact">Contact</a>
+                    <a className="nav-link" href="#contact">Contact</a>
                   </li>
-                </ul>
-
-                <ul className={styles.navMenuLinks_secondary}>
-                  <li>
+                  <li className={styles.navMenuLink_secondary}>
                     <Link href="/nonprofit">
-                      <a>Nonprofit</a>
+                      <a className="nav-link">Nonprofit</a>
                     </Link>
                   </li>
                 </ul>
-              </aside>
-              <div id="nav-background" className={styles.navBackground}></div>
+              </nav>
+
+              <div id="nav-background" className={styles.navMenu_background}></div>
             </div>
+
           </div>
 
         </div>
