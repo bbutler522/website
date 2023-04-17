@@ -34,7 +34,7 @@ export default function Home({ allPostsData }) {
               Hi, I'm Brennan!
             </h1>
             <div className={styles.hero_textBlock}>
-              By day I'm a software engineer with PBS NewsHour. By night I make things. Creative expression is my passion, and I'm always open to learning about new opportunities.
+              By day I'm a software engineer with Postlight. By night I make things. Creative expression is my passion, and I'm always open to learning about new opportunities.
             </div>
             <div className="buttonLarge_wrapper">
               <div className="buttonLarge_fill"></div>
