@@ -26,9 +26,9 @@ export default function Footer(props) {
           <h2>{props.headline ? (props.headline) : (`Want to bring your ideas to life?`)}</h2>
           <p>{props.subhead ? (props.subhead) : (`Have an exciting project that could use my help? Need a consultation? Get in touch and let's chat!`)}</p>
 
-          <p>Use the form or <a href="mailto:hello@brennanbutler.com">email me</a> at <span className={styles.copyButton} onClick={() => copyToClipboard()}>hello@brennanbutler.com</span></p>
+          <p>Use the form or <a href="mailto:bbutler522@gmail.com">email me</a> at <span className={styles.copyButton} onClick={() => copyToClipboard()}>bbutler522@gmail.com</span></p>
           <div id="copy-notice" className={styles.copyNotice}>Email copied to clipboard</div>
-          <input id="email-copy" className={styles.copyText} defaultValue="hello@brennanbutler.com"></input>
+          <input id="email-copy" className={styles.copyText} defaultValue="bbutler522@gmail.com"></input>
         </div>
         
 

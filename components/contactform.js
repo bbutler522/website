@@ -19,7 +19,7 @@ export default function ContactForm(props) {
     console.log(source)
     
     const res = await fetch(
-      'https://formsubmit.co/ajax/hello@brennanbutler.com',
+      'https://formsubmit.co/ajax/bbutler522@gmail.com',
       {
         body: JSON.stringify({
           name: data.name,
@@ -81,7 +81,7 @@ export default function ContactForm(props) {
       </form>
 
       <div id="success-message" className={styles.resultMessage}>Your message has been sent!</div>
-      <div id="error-message" className={styles.resultMessage}>There was an issue. Please try submitting again, or you can email me at <b>hello@brennanbutler.com</b></div>
+      <div id="error-message" className={styles.resultMessage}>There was an issue. Please try submitting again, or you can email me at <b>bbutler522@gmail.com</b></div>
     </div>
   )
 }
